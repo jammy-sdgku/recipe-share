@@ -1,0 +1,30 @@
+{% extends 'main.html' %} 
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'stylesheets/login.css' %}?v=1.1" />
+{% endblock %}
+
+{% block content %}
+
+<div class="login-container">
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %} {% endblock %}

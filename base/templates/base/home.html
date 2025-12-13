@@ -23,13 +23,7 @@
         >
           {{ recipe.recipe_name }}
         </p>
-        {% if user.is_superuser or user == recipe.recipe_author %}
-        <a
-          style="font-weight: bold; display: inline"
-          href="{% url 'update-recipe' recipe.id %}"
-          >EDIT</a
-        >
-        {% endif %}
+        
       </div>
       <!-- Include description if it's exist -->
       {% if recipe.recipe_description %}
@@ -61,19 +55,20 @@
       <p>
         Posted by
         <a href="{% url 'user-profiles' recipe.recipe_author.id %}"
-          >{{ recipe.recipe_author }}</a
-        >
+          >{{ recipe.recipe_author }}</a>
       </p>
-      {% if user.is_superuser or user == recipe.recipe_author %}
-      <a
-        style="color: red; font-weight: bold"
-        href="{% url 'delete-recipe' recipe.id %}"
-        >DELETE</a
-      >
-      {% endif %}
+
       <a href="{% url 'recipe-page' recipe.id %}">
-        <button class="btn btn-warning">See More</button>
-      </a>
+        <button class="btn btn-warning">See More</button></a>
+
+      {% if user.is_superuser or user == recipe.recipe_author %}
+      <a href="{% url 'update-recipe' recipe.id %}"
+          ><button class="btn btn-primary">EDIT</button></a>
+      
+      <a href="{% url 'delete-recipe' recipe.id %}"
+        ><button class="btn btn-danger">DELETE</button></a>
+      {% endif %}
+      
     </div>
     {% endfor %}
   </div>

@@ -6,6 +6,8 @@
     <span style="font-weight: bold">{{ obj }}</span> recipe?
   </p>
   <button class="btn btn-danger" type="submit">YES</button>
-  <a href="{{request.META.HTTP_REFERER}}">GO BACK</a>
+  
+  <a href="{{request.META.HTTP_REFERER}}">
+    <button class="btn btn-secondary">Go Back</button></a>
 </form>
 {% endblock %}

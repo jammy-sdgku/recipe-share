@@ -67,3 +67,6 @@ def user_profile(request, id):
         'msg': 'Recipes posted by ' + user.username + ":"
     }
     return render(request, 'base/home.html', context)
+
+def privacy_policy(request):
+    return render(request, 'base/privacy.html')

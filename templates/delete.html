@@ -4,13 +4,13 @@
   <form action="" method="POST">
     {% csrf_token %}
     <p>
-      Are you sure you want to delete
-      <span style="font-weight: bold">{{ obj }}</span> recipe?
+      Sind Sie sicher, dass Sie löschen möchten
+      <span style="font-weight: bold">{{ obj }}</span> Rezept?
     </p>
-    <button class="btn btn-danger" type="submit">YES</button>
+    <button class="btn btn-danger" type="submit">JA</button>
   </form>
 
-  <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary mt-3">Go Back</a>
+  <a href="{{request.META.HTTP_REFERER}}" class="btn btn-secondary mt-3">Zurück</a>
 </div>
 
 {% endblock %}

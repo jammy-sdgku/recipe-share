@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Share | Share and Search recipes</title>
+    <title>Rezept Teilen | Rezepte teilen und suchen</title>
     <link
       rel="shortcut icon"
       type="image/png"
@@ -54,13 +54,14 @@
                   class="nav-link active"
                   aria-current="page"
                   href="{% url 'home' %}"
-                  >Home</a
+                  >Heim</a
                 >
+    
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'recipes' %}"
-                  >Create Recipe</a
+                  >Rezept Erstellen</a
                 >
               </li>
               {% endif %}
@@ -72,51 +73,56 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  More
+                  Mehr Optionen
                 </a>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="{% url 'cuisines' %}"
-                      >Cuisines</a
+                      >Küchen</a
                     >
                   </li>
                   <li>
                     <a class="dropdown-item" href="{% url 'recipe-types' %}"
-                      >Recipe Types</a
+                      >Rezepttypen</a
                     >
                   </li>
                   <li>
                     <a class="dropdown-item" href="{% url 'main-ingredients' %}"
-                      >Main Ingredients</a
+                      >Hauptzutaten</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'privacy' %}"
+                      >Datenschutz</a
                     >
                   </li>
 
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a class="dropdown-item" href="{% url 'advanced-search' %}"
-                      >Advanced Search</a
+                      >Erweiterte Suche</a
                     >
                   </li>
                 </ul>
               </li>
             </ul>
-
+            
             {% if user.is_authenticated %}
             <div class="header-div">
               <a href="{% url 'log-out' %}">
-                <button class="btn btn-danger">Log out</button>
+                <button class="btn btn-danger">Abmelden</button>
               </a>
               <a href="{% url 'user-profiles' user.id %}">
-                <h4>Welcome {{ user.username }}</h4>
+                <h4>Willkommen {{ user.username }}</h4>
               </a>
             </div>
             {% else %}
             <div class="header-div">
               <a href="{% url 'sign-up' %}">
-                <button class="btn btn-outline-warning">Sign up</button>
+                <button class="btn btn-outline-warning">Registrieren</button>
               </a>
               <a href="{% url 'log-in' %}">
-                <button class="btn btn-outline-warning">Log in</button>
+                <button class="btn btn-outline-warning">Anmelden</button>
               </a>
             </div>
             {% endif %}
@@ -135,7 +141,7 @@
                 name="q"
               />
               <button class="btn btn-outline-warning" type="submit">
-                Search
+                Suchen
               </button>
             </form>
 

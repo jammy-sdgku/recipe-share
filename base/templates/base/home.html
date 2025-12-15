@@ -59,14 +59,14 @@
       </p>
 
       <a href="{% url 'recipe-page' recipe.id %}">
-        <button class="btn btn-warning">See More</button></a>
+        <button class="btn btn-warning">Mehr</button></a>
 
       {% if user.is_superuser or user == recipe.recipe_author %}
       <a href="{% url 'update-recipe' recipe.id %}"
-          ><button class="btn btn-primary">EDIT</button></a>
+          ><button class="btn btn-primary">Bearbeiten</button></a>
       
       <a href="{% url 'delete-recipe' recipe.id %}"
-        ><button class="btn btn-danger">DELETE</button></a>
+        ><button class="btn btn-danger">Löschen</button></a>
       {% endif %}
       
     </div>

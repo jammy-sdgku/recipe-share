@@ -6,7 +6,7 @@
     <!-- First column -->
     <div class="col-md-6">
       <div class="mb-3">
-        <label for="recipe_name" class="form-label">Recipe Name</label>
+        <label for="recipe_name" class="form-label">Rezeptname</label>
         <input
           type="text"
           class="form-control form-control-md"
@@ -18,7 +18,7 @@
       </div>
       <div class="mb-3">
         <label for="recipe_description" class="form-label"
-          >Recipe Description</label
+          >Rezeptbeschreibung</label
         >
         <input
           type="text"
@@ -29,7 +29,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="recipe_image" class="form-label">Recipe Image</label>
+        <label for="recipe_image" class="form-label">Rezeptbild</label>
         <input
           type="text"
           class="form-control form-control-md"
@@ -39,7 +39,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="recipe_method" class="form-label">Recipe Method</label>
+        <label for="recipe_method" class="form-label">Rezeptmethode</label>
         <textarea
           class="form-control form-control-md"
           name="recipe_method"
@@ -53,7 +53,7 @@
 
     <!-- Second column -->
     <div class="col-md-6">
-      <label for="main_ingredient" class="form-label">Main Ingredient</label>
+      <label for="main_ingredient" class="form-label">Hauptzutat</label>
       <select
         name="main_ingredient"
         class="form-select mb-2"
@@ -85,7 +85,7 @@
         {% endfor %}
       </select>
 
-      <label for="recipe_type" class="form-label">Recipe Type</label>
+      <label for="recipe_type" class="form-label">Rezepttyp</label>
       <select
         name="recipe_type"
         class="form-select mb-2"
@@ -101,7 +101,7 @@
         {% endfor %}
       </select>
 
-      <label for="prep_time" class="form-label">Preparation Time</label>
+      <label for="prep_time" class="form-label">Zubereitungszeit</label>
       <select
         name="prep_time"
         class="form-select mb-2"
@@ -134,7 +134,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Absenden</button>
 </form>
 
 {% if messages %}

@@ -1,8 +1,8 @@
 {% extends 'main.html' %} {% block content %}
 <div class="container">
-  <h1><span style="color: #190c8d">Recipe:</span> {{ recipe.recipe_name }}</h1>
+  <h1><span style="color: #190c8d">Rezept:</span> {{ recipe.recipe_name }}</h1>
   <p style="font-size: 19px">
-    By
+    Von
     <a
       href="{% url 'user-profiles' recipe.recipe_author.id %}"
       style="text-decoration: underline; font-weight: bold"
@@ -10,7 +10,7 @@
     >
     <span style="color: rgb(158, 158, 158)">|</span>
     <span style="font-size: 16px; color: rgb(136, 135, 135)"
-      >Updated at: {{recipe.updated_at}}</span
+      >Aktualisiert am: {{recipe.updated_at}}</span
     >
   </p>
   <img
@@ -25,7 +25,7 @@
     <span
       style="color: #190c8d; font-size: 20px; text-decoration: underline"
       class="recipe-page-label"
-      >Description:</span
+      >Beschreibung:</span
     >
     {{recipe.recipe_description}}
   </p>
@@ -35,7 +35,7 @@
     <span
       style="color: #190c8d; font-size: 20px; text-decoration: underline"
       class="recipe-page-label"
-      >Ingredients:</span
+      >Zutaten:</span
     >
     {{recipe.recipe_ingredients|linebreaks}}
   </div>
@@ -45,7 +45,7 @@
     <span
       style="color: #190c8d; font-size: 20px; text-decoration: underline"
       class="recipe-page-label"
-      >Method:</span
+      >Methode:</span
     >
     {{recipe.recipe_method|linebreaks}}
   </div>
@@ -61,19 +61,19 @@
     class="container-md"
   >
     <div style="display: flex; flex-direction: column; align-items: center">
-      <p style="font-weight: bold">Main Ingredient:</p>
+      <p style="font-weight: bold">Hauptzutat:</p>
       <p>{{recipe.recipe_main_ingredient}}</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center">
-      <p style="font-weight: bold">Preperation Time:</p>
+      <p style="font-weight: bold">Zubereitungszeit:</p>
       <p>{{recipe.recipe_prep_time}}</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center">
-      <p style="font-weight: bold">Cuisine:</p>
+      <p style="font-weight: bold">Küche:</p>
       <p>{{recipe.recipe_cuisine}}</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center">
-      <p style="font-weight: bold">Recipe Type:</p>
+      <p style="font-weight: bold">Rezepttyp:</p>
       <p>{{recipe.recipe_type}}</p>
     </div>
   </div>

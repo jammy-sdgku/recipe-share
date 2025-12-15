@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q 
 from .models import MainIngredient, Cuisine, PrepTime, Type, Recipe
 
@@ -174,17 +175,22 @@ def update_recipe(request, id):
 
     return render(request, 'recipes/update_recipe.html', context)
 
+@login_required(login_url='log-in')
 def delete_recipe(request, id):
-    recipe = Recipe.objects.get(id = id);
-    if request.user is recipe.recipe_author or request.user.is_superuser:
+    try:
+        recipe = Recipe.objects.get(id=id)
+    except Recipe.DoesNotExist:
+        messages.error(request, 'Rezept nicht gefunden.')
+        return redirect('home')
 
-        if request.method == 'GET':
-            context = { 'obj': recipe.recipe_name }
-            return render(request, 'delete.html', context)
+    if request.user != recipe.recipe_author and not request.user.is_superuser:
+        messages.error(request, 'Sie sind nicht berechtigt, dieses Rezept zu löschen.')
+        return redirect('home')
 
-        if request.method == 'POST':
-            recipe.delete()
-            return redirect('home')  # Redirect to a home page
-    else:
-        context = {'error': 'You are not the owner of this recipe'}
-        return render(request, 'error.html', context)
+    if request.method == 'POST':
+        recipe.delete()
+        messages.success(request, 'Rezept wurde erfolgreich gelöscht.')
+        return redirect('home')
+
+    context = {'obj': recipe}
+    return render(request, 'delete.html', context)

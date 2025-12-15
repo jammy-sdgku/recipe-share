@@ -10,14 +10,14 @@
   <form method="post" action="">
     {% csrf_token %}
     <div class="mb-3">
-      <label for="username" class="form-label">Username</label>
+      <label for="username" class="form-label">Benutzername</label>
       <input type="text" class="form-control" name="username" />
     </div>
     <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label">Passwort</label>
       <input type="password" name="password" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Absenden</button>
   </form>
 
   {% if messages %}

@@ -1,0 +1,28 @@
+nav {
+    margin-bottom: 5px;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.nav-link.active.active {
+    color: #DFE6B8 !important;
+}
+
+.dropdown-menu {
+    color: black;
+}
+
+.nav-link.dropdown-toggle {
+    color: #DFE6B8 !important;
+}
+
+.bg-body-tertiary {
+    background-color: lightgray !important;
+}
+
+.header-div a {
+    color: #eceaf8;
+    text-decoration: none;
+}

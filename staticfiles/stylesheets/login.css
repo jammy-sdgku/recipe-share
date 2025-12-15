@@ -1,0 +1,32 @@
+.content-container {
+    height: 100vh;
+    background-color: #DFE6B8;
+}
+
+.mb-3 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.btn-primary {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-container {
+    background-image: url('/static/images/background_2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #DFE6B8;
+    border-radius: 5px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

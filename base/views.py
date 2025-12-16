@@ -70,3 +70,6 @@ def user_profile(request, id):
 
 def privacy_policy(request):
     return render(request, 'base/privacy.html')
+
+
+

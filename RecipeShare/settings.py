@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
 if DEBUG:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.getenv('HEROKU_APP_HOST')]
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 else:
     ALLOWED_HOSTS = [os.getenv('HEROKU_APP_HOST')]
 

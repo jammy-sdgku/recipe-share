@@ -6,33 +6,33 @@
     <!-- First column -->
     <div class="col-md-6">
       <div class="mb-3">
-        <label for="recipe_name" class="form-label">Recipe Name</label>
+        <label for="recipe_name" class="form-label">Rezeptnamen</label>
         <input
           type="text"
           class="form-control form-control-md"
           name="recipe_name"
-          placeholder="Search with recipe names..."
+          placeholder="Suche mit Rezeptnamen..."
         />
       </div>
-      <label for="main_ingredient" class="form-label">Main Ingredient</label>
+      <label for="main_ingredient" class="form-label">Hauptzutat</label>
       <select
         name="main_ingredient"
         class="form-select mb-2"
         aria-label="Default select example"
       >
-        <option value="" selected>Any</option>
+        <option value="" selected>beliebig</option>
         {% for ingredient in main_ingredients %}
         <option value="{{ingredient}}">{{ ingredient }}</option>
         {% endfor %}
       </select>
 
-      <label for="cuisine" class="form-label">Cuisine</label>
+      <label for="cuisine" class="form-label">Küche</label>
       <select
         name="cuisine"
         class="form-select mb-2"
         aria-label="Default select example"
       >
-        <option value="" selected>Any</option>
+        <option value="" selected>beliebig</option>
         {% for cuisine in cuisines %}
         <option value="{{cuisine}}">{{ cuisine }}</option>
         {% endfor %}
@@ -41,45 +41,45 @@
 
     <!-- Second column -->
     <div class="col-md-6">
-      <label for="recipe_type" class="form-label">Recipe Type</label>
+      <label for="recipe_type" class="form-label">Rezepttyp</label>
       <select
         name="recipe_type"
         class="form-select mb-2"
         aria-label="Default select example"
       >
-        <option value="" selected>Any</option>
+        <option value="" selected>beliebig</option>
         {% for recipe_type in recipe_types %}
         <option value="{{recipe_type}}">{{ recipe_type }}</option>
         {% endfor %}
       </select>
 
-      <label for="prep_time" class="form-label">Preparation Time</label>
+      <label for="prep_time" class="form-label">Zubereitungszeit</label>
       <select
         name="prep_time"
         class="form-select mb-2"
         aria-label="Default select example"
       >
-        <option value="" selected>Any</option>
+        <option value="" selected>beliebig</option>
         {% for prep_time in prep_times %}
         <option value="{{prep_time}}">{{ prep_time }}</option>
         {% endfor %}
       </select>
       <div class="mb-3">
         <label for="recipe_description" class="form-label"
-          >Recipe Description</label
+          >Rezeptbeschreibung</label
         >
         <input
           type="text"
           class="form-control form-control-md"
           name="recipe_description"
-          placeholder="Search with descriptions..."
+          placeholder="Suche mit Beschreibungen..."
         />
       </div>
     </div>
   </div>
 
   <!-- Submit button -->
-  <button class="btn mt-2 btn-outline-success" type="submit">Search</button>
+  <button class="btn mt-2 btn-outline-success" type="submit">Suchen</button>
 </form>
 
 {% if messages %}

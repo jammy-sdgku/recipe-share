@@ -89,6 +89,8 @@ def handle_recipe_pages(request, id):
     }
     return render(request, 'recipes/recipe.html', context)
 
+# list views for more options on main ingredients, recipe types, cuisines
+
 def get_main_ingredients(request):
     main_ingredients = MainIngredient.objects.all()
     context = { 
@@ -112,6 +114,8 @@ def get_cuisines(request):
         'obj_type': 'cuisines'
     }
     return render(request, 'obj.html', context)
+
+# filter views for main ingredients, recipe types, cuisines
 
 def handle_main_ingredients(request, id):
     recipes = Recipe.objects.filter(recipe_main_ingredient=id)

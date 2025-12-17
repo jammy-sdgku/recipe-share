@@ -1,0 +1,31 @@
+.container-lg {
+    background-image: url('/static/images/background_2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #DFE6B8;
+    border-radius: 5px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.my-4 {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* phone sizes will not display background image */
+@media (max-width: 576px) {
+    .container-lg {
+        background-image: none;
+    }
+}

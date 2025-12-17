@@ -62,3 +62,7 @@ h1 {
   color: rgb(110, 109, 109);
   /* No 'white-space: nowrap' allows the description to wrap */
 }
+
+.align-items-center {
+  align-items: center !important;
+}
